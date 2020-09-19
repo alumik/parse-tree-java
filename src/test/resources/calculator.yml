@@ -1,0 +1,23 @@
+nonterminalSymbols:
+  ? E
+  ? T
+  ? F
+terminalSymbols:
+  '+': '\+'
+  '-': '\-'
+  '*': '\*'
+  '/': '/'
+  '(': '\('
+  ')': '\)'
+  'num': '[0-9]+'
+ignoredSymbols:
+startSymbol: E
+productions:
+  - E -> E + T
+  - E -> E - T
+  - E -> T
+  - T -> T * F
+  - T -> T / F
+  - T -> F
+  - F -> num
+  - F -> ( E )

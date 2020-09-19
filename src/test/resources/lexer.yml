@@ -1,0 +1,17 @@
+nonterminalSymbols:
+  ? S
+  ? T
+  ? E
+  ? F
+terminalSymbols:
+  AB2: ab
+  ABC: abc
+  A: a
+  AB1: ab
+ignoredSymbols:
+  ? A
+startSymbol: S
+productions:
+  - S -> S T
+  - S -> F
+  - T -> T E

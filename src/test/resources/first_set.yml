@@ -1,0 +1,26 @@
+nonterminalSymbols:
+  ? A
+  ? B
+  ? C
+  ? D
+  ? E
+terminalSymbols:
+  c: c
+  g: g
+  b: b
+  a: a
+  d: d
+  f: f
+ignoredSymbols:
+startSymbol: A
+productions:
+  - A -> B C c
+  - A -> g D B
+  - B -> b C D E
+  - B -> null
+  - C -> D a B
+  - C -> c a
+  - D -> d D
+  - D -> null
+  - E -> g A f
+  - E -> c
