@@ -5,6 +5,7 @@ import cn.alumik.parsetree.exception.ParsingException;
 import cn.alumik.parsetree.lexer.fsm.DFA;
 import cn.alumik.parsetree.lexer.fsm.FSMState;
 import cn.alumik.parsetree.lexer.fsm.NFA;
+import cn.alumik.parsetree.parser.Parser;
 import cn.alumik.parsetree.symbol.TerminalSymbol;
 import cn.alumik.parsetree.util.Config;
 
@@ -14,14 +15,17 @@ public class Lexer {
 
     private final Config mConfig;
 
+    private final Parser mParser;
+
     private DFA mDfa;
 
     private Map<String, String> mAcceptingRules = new LinkedHashMap<>();
 
     private Set<String> mIgnoredSymbols = new HashSet<>();
 
-    public Lexer(Config config) throws AnalysisException, ParsingException {
+    public Lexer(Config config, Parser parser) throws AnalysisException, ParsingException {
         mConfig = config;
+        mParser = parser;
         initAcceptingRules();
         initDFA();
     }
@@ -38,11 +42,7 @@ public class Lexer {
         mAcceptingRules = acceptingRules;
     }
 
-    public Set<String> getIgnoredSymbols() {
-        return mIgnoredSymbols;
-    }
-
-    public List<TerminalSymbol> lex(String input) throws ParsingException {
+    public List<TerminalSymbol> lex(String input) throws ParsingException, AnalysisException {
         final List<TerminalSymbol> lexResult = new ArrayList<>();
         final StringBuilder stringBuilder = new StringBuilder(input);
         while (stringBuilder.length() != 0) {
@@ -53,7 +53,9 @@ public class Lexer {
             if (!mIgnoredSymbols.contains(result.getKey())) {
                 final String value = stringBuilder.substring(0, result.getValue());
                 System.out.println(result.getKey() + ": " + value);
-                final TerminalSymbol terminalSymbol = new TerminalSymbol(value);
+                final TerminalSymbol terminalSymbol = new TerminalSymbol(
+                        mParser.getGrammar().getSymbolPool().getTerminalSymbol(result.getKey()));
+                terminalSymbol.setValue(value);
                 lexResult.add(terminalSymbol);
             }
             stringBuilder.delete(0, result.getValue());

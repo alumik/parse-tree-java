@@ -80,7 +80,8 @@ public class Parser {
 
     private void initTerminalSymbolList(List<TerminalSymbol> terminalSymbols) throws AnalysisException {
         for (final TerminalSymbol terminalSymbol : terminalSymbols) {
-            terminalSymbol.setAbstractSymbol(mGrammar.getSymbolPool().getTerminalSymbol(terminalSymbol.getValue()));
+            terminalSymbol.setAbstractSymbol(
+                    mGrammar.getSymbolPool().getTerminalSymbol(terminalSymbol.getAbstractSymbol().getName()));
         }
     }
 }

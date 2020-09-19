@@ -4,7 +4,7 @@ public class Symbol {
 
     private AbstractSymbol mAbstractSymbol;
 
-    final private String mValue;
+    private String mValue;
 
     public Symbol(String value) {
         mValue = value;
@@ -20,6 +20,10 @@ public class Symbol {
 
     public String getValue() {
         return mValue;
+    }
+
+    public void setValue(String value) {
+        mValue = value;
     }
 
     @Override

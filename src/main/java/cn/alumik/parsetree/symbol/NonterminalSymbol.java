@@ -6,8 +6,4 @@ public class NonterminalSymbol extends Symbol {
         super(abstractNonterminalSymbol.getName());
         setAbstractSymbol(abstractNonterminalSymbol);
     }
-
-    public NonterminalSymbol(String value) {
-        super(value);
-    }
 }

@@ -12,12 +12,12 @@ public class ParseTreeApp {
     public static void main(String[] args) {
         final Config config = new Config("config.yml");
         try {
-            final Lexer lexer = new Lexer(config);
             final Parser parser = new Parser(config);
+            final Lexer lexer = new Lexer(config, parser);
 
             final Scanner scanner = new Scanner(System.in);
             final ParseTree parseTree = parser.parse(lexer.lex(scanner.next()));
-            parseTree.draw("out/parse-tree.png");
+            parseTree.draw("out/parse_tree.png");
         } catch (Exception e) {
             e.printStackTrace();
         }

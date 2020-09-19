@@ -7,16 +7,16 @@ nonterminalSymbols:
   ? S
 terminalSymbols:
   # name: regex
-  a: a
-  b: b
+  α: a
+  β: b
 ignoredSymbols:
 startSymbol: S
 productions:
   # - left part -> right part
-  - S -> C b B A
-  - A -> A a b
-  - A -> a b
+  - S -> C β B A
+  - A -> A α β
+  - A -> α β
   - B -> C
-  - B -> D b
-  - C -> a
-  - D -> a
+  - B -> D β
+  - C -> α
+  - D -> α

@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Config {
 
-    final private ConfigSource mConfigSource;
+    private final ConfigSource mConfigSource;
 
     public Config(String path) {
         final Yaml yaml = new Yaml(new Constructor(ConfigSource.class));

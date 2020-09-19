@@ -29,7 +29,7 @@ public abstract class AbstractSymbol {
 
     @Override
     public String toString() {
-        return (getType() == TERMINAL ? "Terminal Symbol: " : "Nonterminal Symbol: ") + mName;
+        return (getType() == TERMINAL ? "Terminal symbol: " : "Nonterminal symbol: ") + mName;
     }
 
     @Override

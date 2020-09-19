@@ -1,8 +1,7 @@
 package cn.alumik.parsetree.parser;
 
 import cn.alumik.parsetree.util.IDGen;
-import guru.nidi.graphviz.attribute.Color;
-import guru.nidi.graphviz.attribute.Label;
+import guru.nidi.graphviz.attribute.*;
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
 import guru.nidi.graphviz.engine.GraphvizV8Engine;
@@ -39,10 +38,14 @@ public class ParseTree {
         while (!nodeQueue.isEmpty()) {
             final ParseTreeNode currentNode = nodeQueue.poll();
             final MutableNode currentGraphNode = mutNode(currentNode.getId())
-                    .add(Label.of(currentNode.getSymbol().getValue()));
+                    .add(Label.of(currentNode.getSymbol().getAbstractSymbol().getName()));
             graphNodes.add(currentGraphNode);
             if (currentNode.getChildren().isEmpty()) {
-                currentGraphNode.add(Color.BLUE);
+                final MutableNode valueNode = mutNode(currentNode.getId() + currentNode.getSymbol().getValue())
+                        .add(Label.of(currentNode.getSymbol().getValue())).add(Shape.BOX).add(Color.BLUE);
+                graphNodes.add(valueNode);
+                currentGraphNode.addLink(currentGraphNode.linkTo(valueNode)
+                        .add(Style.DASHED).add(Color.BLUE).add(Arrow.NONE));
             } else {
                 for (final ParseTreeNode nextNode : currentNode.getChildren()) {
                     nodeQueue.add(nextNode);

@@ -15,7 +15,7 @@ public class Grammar {
 
     private AbstractNonterminalSymbol mStartSymbol;
 
-    final private SymbolPool mSymbolPool;
+    private final SymbolPool mSymbolPool;
 
     private List<Production> mProductions;
 
