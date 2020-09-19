@@ -1,0 +1,22 @@
+nonterminalSymbols:
+  # ? name
+  ? A
+  ? B
+  ? C
+  ? D
+  ? S
+terminalSymbols:
+  # name: regex
+  a: a
+  b: b
+ignoredSymbols:
+startSymbol: S
+productions:
+  # - left part -> right part
+  - S -> C b B A
+  - A -> A a b
+  - A -> a b
+  - B -> C
+  - B -> D b
+  - C -> a
+  - D -> a
