@@ -12,11 +12,11 @@ Take the regular expression `(a|b)*abb` for example.
 
 1. Create an NFA.
 
-    ![KPTaGR.png](https://s2.ax1x.com/2019/10/16/KPTaGR.png)
+    ![1-NFA](https://raw.githubusercontent.com/AlumiK/github-playground/master/Pictures/parse-tree/1_nfa.png)
     
 2. Convert the NFA to a DFA.
 
-    ![KPTtIJ.png](https://s2.ax1x.com/2019/10/16/KPTtIJ.png)
+    ![1-DFA](https://raw.githubusercontent.com/AlumiK/github-playground/master/Pictures/parse-tree/1_dfa.png)
 
 #### Merge multiple NFAs
 
@@ -24,11 +24,11 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
 
 1. Create three NFAs and combine them into one large NFA.
 
-    ![KPTYa4.png](https://s2.ax1x.com/2019/10/16/KPTYa4.png)
+    ![2-NFA](https://raw.githubusercontent.com/AlumiK/github-playground/master/Pictures/parse-tree/2_nfa.png)
 
 2. Convert the DFA to DFA.
 
-    ![KPTUi9.png](https://s2.ax1x.com/2019/10/16/KPTUi9.png)
+    ![2-DFA](https://raw.githubusercontent.com/AlumiK/github-playground/master/Pictures/parse-tree/2_dfa.png)
 
 ### Creating Parse Tree
 
@@ -57,19 +57,19 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
       ? S
     terminalSymbols:
       # name: regex
-      a: a
-      b: b
+      α: a
+      β: b
     ignoredSymbols:
     startSymbol: S
     productions:
       # - left part -> right part
-      - S -> C b B A
-      - A -> A a b
-      - A -> a b
+      - S -> C β B A
+      - A -> A α β
+      - A -> α β
       - B -> C
-      - B -> D b
-      - C -> a
-      - D -> a
+      - B -> D β
+      - C -> α
+      - D -> α
     ```
 
 3. Generate the parse table.
@@ -82,8 +82,8 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
       </tr>
       <tr>
         <td></td>
-        <td>a</td>
-        <td>b</td>
+        <td>α</td>
+        <td>β</td>
         <td>$</td>
         <td>S</td>
         <td>A</td>
@@ -262,4 +262,4 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
 
     The input string is `abababab`.
     
-    ![KC59Yt.png](https://s2.ax1x.com/2019/10/15/KC59Yt.png)
+    ![Parse Tree](https://raw.githubusercontent.com/AlumiK/github-playground/master/Pictures/parse-tree/parse_tree.png)
