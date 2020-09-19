@@ -17,7 +17,7 @@ public class Regex extends AbstractRegex {
     private static final Set<String> TERMINAL_SYMBOLS = new HashSet<>(
             Arrays.asList("|", "(", ")", "*", "+", "[", "]", "-", "char", "^", "."));
 
-    private static final Set<String> NON_TERMINAL_SYMBOLS = new HashSet<>(
+    private static final Set<String> NONTERMINAL_SYMBOLS = new HashSet<>(
             Arrays.asList("E", "T", "F", "Fx", "Fxs"));
 
     private static final String START_SYMBOL = "E";
@@ -29,7 +29,7 @@ public class Regex extends AbstractRegex {
     @Override
     protected void initGrammar() throws AnalysisException {
         final List<RegexProduction> regexRules = new ArrayList<>();
-        final Grammar grammar = new Grammar(TERMINAL_SYMBOLS, NON_TERMINAL_SYMBOLS, START_SYMBOL);
+        final Grammar grammar = new Grammar(TERMINAL_SYMBOLS, NONTERMINAL_SYMBOLS, START_SYMBOL);
 
         regexRules.add(new RegexProduction(Production.fromString("E -> E | T", grammar)) {
             @Override
