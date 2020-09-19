@@ -101,7 +101,7 @@ public class NFA {
             }
             if (state == mStartState) {
                 final MutableNode entryNode = mutNode("0")
-                        .add(Shape.NONE)
+                        .add(Shape.POINT)
                         .add(Label.of(""))
                         .addLink(to(node).with(Label.of("start")));
                 graph.add(entryNode);
