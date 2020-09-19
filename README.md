@@ -2,6 +2,14 @@
 
 This project is heavily inspired by [LYRON](https://github.com/LLyronx/LYRON), a universal compiler framework.
 
+## Usage
+
+Modify `config.yml` if necessary, and execute
+
+```
+cat test_code.txt | java -jar parsetree.jar
+```
+
 ## Examples
 
 ### Lexical Analysis
