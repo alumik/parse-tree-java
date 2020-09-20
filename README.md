@@ -4,11 +4,13 @@ This project is heavily inspired by [LYRON](https://github.com/LLyronx/LYRON), a
 
 ## Usage
 
-Modify `config.yml` if necessary, and execute
+Modify `config.yml` if necessary, place your test file, e.g., `test.txt`, and then execute
 
 ```
-cat test_code.txt | java -jar parsetree.jar
+cat test.txt | java -jar parse-tree.jar
 ```
+
+You can also execute the jar file directly and input your test code in the console.
 
 ## Examples
 
@@ -44,13 +46,13 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
 
     ```
     1. S'->S
-    2. S->CbBA
-    3. A->Aab
-    4. A->ab
+    2. S->CβBA
+    3. A->Aαβ
+    4. A->αβ
     5. B->C
-    6. B->Db
-    7. C->a
-    8. D->a
+    6. B->Dβ
+    7. C->α
+    8. D->α
     ```
 
 2. Write a config file (in YAML format).
