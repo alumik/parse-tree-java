@@ -1,5 +1,9 @@
 # LR(1) Parse Tree Generator
 
+![JDK-15](https://img.shields.io/badge/JDK-15-blue)
+![version-1.0.2](https://img.shields.io/badge/version-1.0.2-blue)
+[![license-MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/AlumiK/parse-tree/blob/main/LICENSE)
+
 This project is heavily inspired by [LYRON](https://github.com/LLyronx/LYRON), a universal compiler framework.
 
 ## Usage
