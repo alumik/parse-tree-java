@@ -1,7 +1,7 @@
 # LR(1) Parse Tree Generator
 
 ![JDK-15](https://img.shields.io/badge/JDK-15-blue)
-![version-1.0.2](https://img.shields.io/badge/version-1.0.2-blue)
+![version-1.0.3](https://img.shields.io/badge/version-1.0.3-blue)
 [![license-MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/AlumiK/parse-tree/blob/main/LICENSE)
 
 This project is heavily inspired by [LYRON](https://github.com/LLyronx/LYRON), a universal compiler framework.
@@ -26,11 +26,11 @@ Take the regular expression `(a|b)*abb` for example.
 
 1. Create an NFA.
 
-    ![1-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/1_nfa.png)
+    ![1-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/1_nfa.svg)
     
 2. Convert the NFA to a DFA.
 
-    ![1-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/1_dfa.png)
+    ![1-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/1_dfa.svg)
 
 #### Merge multiple NFAs
 
@@ -38,11 +38,11 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
 
 1. Create three NFAs and combine them into one large NFA.
 
-    ![2-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/2_nfa.png)
+    ![2-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/2_nfa.svg)
 
 2. Convert the DFA to DFA.
 
-    ![2-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/2_dfa.png)
+    ![2-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/2_dfa.svg)
 
 ### Creating Parse Tree
 
@@ -276,4 +276,4 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
 
     The input string is `abababab`.
     
-    ![Parse Tree](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/parse_tree.png)
+    ![Parse Tree](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/parse_tree.svg)

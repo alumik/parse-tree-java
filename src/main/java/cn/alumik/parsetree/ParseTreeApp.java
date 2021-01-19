@@ -17,7 +17,7 @@ public class ParseTreeApp {
 
             final Scanner scanner = new Scanner(System.in);
             final ParseTree parseTree = parser.parse(lexer.lex(scanner.next()));
-            parseTree.draw("out/parse_tree.png");
+            parseTree.draw("out/parse_tree.svg");
         } catch (Exception e) {
             e.printStackTrace();
         }

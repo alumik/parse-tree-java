@@ -116,6 +116,6 @@ public class ParseTreeAppTest {
     public void watchParseCalculator() throws ParsingException, AnalysisException, IOException {
         makeLexerAndParser("calculator.yml");
         final String expr = "3*(6+(4/2)-5)+8";
-        mParser.parse(mLexer.lex(expr)).draw("out/3_calculator.png");
+        mParser.parse(mLexer.lex(expr)).draw("out/3_calculator.svg");
     }
 }

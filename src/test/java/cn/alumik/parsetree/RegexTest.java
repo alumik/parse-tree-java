@@ -106,10 +106,10 @@ public class RegexTest {
         mLexer.setAcceptingRule(acceptingRules);
 
         final NFA nfa = makeNFA1();
-        nfa.draw("out/1_nfa.png");
+        nfa.draw("out/1_nfa.svg");
 
         final DFA dfa = new DFA(nfa);
-        dfa.draw("out/1_dfa.png");
+        dfa.draw("out/1_dfa.svg");
 
         assertEquals(new AbstractMap.SimpleEntry<>("", 1), dfa.match("abdsffgabb"));
         assertEquals(new AbstractMap.SimpleEntry<>("", 1), dfa.match("abab"));
@@ -128,10 +128,10 @@ public class RegexTest {
         mLexer.setAcceptingRule(acceptingRules);
 
         final NFA nfa = makeNFA2();
-        nfa.draw("out/2_nfa.png");
+        nfa.draw("out/2_nfa.svg");
 
         final DFA dfa = new DFA(nfa);
-        dfa.draw("out/2_dfa.png");
+        dfa.draw("out/2_dfa.svg");
 
         assertEquals(new AbstractMap.SimpleEntry<>("abb", 3), dfa.match("abb"));
         assertEquals(new AbstractMap.SimpleEntry<>("a*b+", 4), dfa.match("abbb"));

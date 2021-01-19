@@ -24,7 +24,7 @@ public class ParseTree {
     }
 
     public void draw(String path) throws IOException {
-        Graphviz.fromGraph(getGraph()).render(Format.PNG).toFile(new File(path));
+        Graphviz.fromGraph(getGraph()).render(Format.SVG).toFile(new File(path));
     }
 
     private MutableGraph getGraph() {
