@@ -26,11 +26,11 @@ Take the regular expression `(a|b)*abb` for example.
 
 1. Create an NFA.
 
-    ![1-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/1_nfa.svg)
+    ![1-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree-java/1_nfa.svg)
     
 2. Convert the NFA to a DFA.
 
-    ![1-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/1_dfa.svg)
+    ![1-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree-java/1_dfa.svg)
 
 #### Merge multiple NFAs
 
@@ -38,11 +38,11 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
 
 1. Create three NFAs and combine them into one large NFA.
 
-    ![2-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/2_nfa.svg)
+    ![2-NFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree-java/2_nfa.svg)
 
 2. Convert the DFA to DFA.
 
-    ![2-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/2_dfa.svg)
+    ![2-DFA](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree-java/2_dfa.svg)
 
 ### Creating Parse Tree
 
@@ -276,4 +276,4 @@ Take the regular expressions `a*b+`, `a`, `abb` for example.
 
     The input string is `abababab`.
     
-    ![Parse Tree](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree/parse_tree.svg)
+    ![Parse Tree](https://raw.githubusercontent.com/AlumiK/images/main/parse-tree-java/parse_tree.svg)
